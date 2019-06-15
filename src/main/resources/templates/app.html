@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Digits Predictor</title>
+    <link href="../static/css/app.css" th:href="@{/css/app.css}" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
+    <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/app.js}"></script>
+</head>
+<body id="body">
+
+<div class="container" id="container">
+    <div id="canvasDiv" class="canvas"></div>
+    <div class="buttons">
+        <a href="#" class="btn purple" id="btn-predict">Predict digit</a>
+        <a href="#" class="btn black" id="btn-clear">Clear canvas</a>
+        <a href="#" class="btn sky" id="btn-clear-history">Clear history</a>
+    </div>
+
+    <div id="predicts"></div>
+</div>
+<div class="spinner-container" id="spinner">
+    <h1>Predicting...</h1>
+    <div class="spinner"></div>
+</div>
+
+</body>
+</html>
