@@ -11,7 +11,7 @@ from keras.optimizers import Adam
 # Load MNIST data set and split to train and test sets
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-# Reshaping to format which CNN expects (batch, height, width, channels)
+# Reshaping to format which ANN expects (batch, height, width, channels)
 train_images = train_images.reshape(train_images.shape[0], train_images.shape[1], train_images.shape[2], 1).astype(
     "float32")
 test_images = test_images.reshape(test_images.shape[0], test_images.shape[1], test_images.shape[2], 1).astype("float32")
@@ -50,6 +50,6 @@ print("Model loss = {}".format(score[0]))
 print("Model accuracy = {}".format(score[1]))
 
 # Save model
-model_filename = "cnn_model.h5"
+model_filename = "ann_model.h5"
 model.save(model_filename)
-print("CNN model saved in file: {}".format(model_filename))
+print("ANN model saved in file: {}".format(model_filename))

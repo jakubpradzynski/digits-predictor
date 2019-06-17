@@ -15,7 +15,7 @@ public class PredictData implements Serializable {
     private byte[] image;
     private String svmPredict;
     private String svmProbability;
-    private String cnnPredict;
-    private String cnnProbability;
+    private String annPredict;
+    private String annProbability;
 
 }

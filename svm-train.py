@@ -2,11 +2,11 @@ import datetime as dt
 import pickle
 
 from sklearn import svm, metrics
-from sklearn.datasets import fetch_mldata
+from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 
 # Load MNIST data set
-mnist_data_set = fetch_mldata("MNIST original", data_home="./")
+mnist_data_set = fetch_openml('mnist_784', version=1, cache=True)
 
 # Assign images and labels to variables
 digits_images = mnist_data_set.data

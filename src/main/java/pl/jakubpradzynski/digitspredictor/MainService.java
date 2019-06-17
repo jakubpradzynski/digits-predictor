@@ -41,7 +41,7 @@ public class MainService {
 
     private void predictInModels(PredictData predictData) throws IOException {
         saveImage(predictData, "predict_svm.png");
-        saveImage(predictData, "predict_cnn.png");
+        saveImage(predictData, "predict_ann.png");
         try {
             predictFromPythonScript(predictData);
         } catch (InterruptedException e) {
@@ -91,10 +91,10 @@ public class MainService {
                 predictData.setSvmPredict(split[1]);
             } else if (split[0].contains("SVM PROBABILITY")) {
                 predictData.setSvmProbability(split[1]);
-            } else if (split[0].contains("CNN PREDICT")) {
-                predictData.setCnnPredict(split[1]);
-            } else if (split[0].contains("CNN PROBABILITY")) {
-                predictData.setCnnProbability(split[1]);
+            } else if (split[0].contains("ANN PREDICT")) {
+                predictData.setAnnPredict(split[1]);
+            } else if (split[0].contains("ANN PROBABILITY")) {
+                predictData.setAnnProbability(split[1]);
             }
         }
     }

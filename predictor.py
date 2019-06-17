@@ -83,7 +83,7 @@ def add_white_background_and_resize(filename):
 
 class ImagePrepare:
     @staticmethod
-    def prepare_for_cnn(filename):
+    def prepare_for_ann(filename):
         add_black_background_and_resize(filename)
         img = Image.open(filename).convert("L")
         img = np.resize(img, (28, 28, 1))
@@ -115,12 +115,12 @@ class SVMPredict:
         return self.model.predict_proba(image)[0]
 
 
-class CNNPredict:
+class ANNPredict:
     def __init__(self):
-        self.model = self.load_cnn_model()
+        self.model = self.load_ann_model()
 
-    def load_cnn_model(self):
-        return load_model("cnn_model.h5")
+    def load_ann_model(self):
+        return load_model("ann_model.h5")
 
     def predict(self, image):
         return int(self.model.predict_classes(image)[0])
@@ -131,16 +131,16 @@ class CNNPredict:
 
 def predict_digit():
         svm_filename = "predict_svm.png"
-        cnn_filename = "predict_cnn.png"
+        ann_filename = "predict_ann.png"
         prepared_for_svm = ImagePrepare.prepare_for_svm(svm_filename)
         svm_predict = SVMPredict().predict(image=prepared_for_svm)
         print("SVM PREDICT: " + str(svm_predict))
         print("SVM PROBABILITY: " + str(
             SVMPredict().predict_probability(image=prepared_for_svm)[svm_predict]))
-        prepared_for_cnn = ImagePrepare.prepare_for_cnn(cnn_filename)
-        cnn_predict = CNNPredict().predict(image=prepared_for_cnn)
-        print("CNN PREDICT: " + str(cnn_predict))
-        print("CNN PROBABILITY: " + str(
-            CNNPredict().predict_probability(image=prepared_for_cnn)[cnn_predict]))
+        prepared_for_ann = ImagePrepare.prepare_for_ann(ann_filename)
+        ann_predict = ANNPredict().predict(image=prepared_for_ann)
+        print("ANN PREDICT: " + str(ann_predict))
+        print("ANN PROBABILITY: " + str(
+            ANNPredict().predict_probability(image=prepared_for_ann)[ann_predict]))
 
 predict_digit()

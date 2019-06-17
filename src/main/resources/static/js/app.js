@@ -88,8 +88,8 @@ $(document).ready(function () {
                 "<th class=\"text-left\">Photo</th>\n" +
                 "<th class=\"text-left\">SVN predict</th>\n" +
                 "<th class=\"text-left\">SVN probability</th>\n" +
-                "<th class=\"text-left\">CNN predict</th>\n" +
-                "<th class=\"text-left\">CNN probability</th>\n" +
+                "<th class=\"text-left\">ANN predict</th>\n" +
+                "<th class=\"text-left\">ANN probability</th>\n" +
                 "</tr>\n" +
                 "</thead>" +
                 "<tbody class=\"table-hover\">\n"
@@ -98,8 +98,8 @@ $(document).ready(function () {
                 html += "<td>" + "<img src='" + data[i].decodedUrl + "' width='112px' height='112px' class='digit-image' alt='Digit'/>" + "</td>";
                 html += "<td>" + data[i].svmPredict + "</td>";
                 html += "<td>" + data[i].svmProbability + "</td>";
-                html += "<td>" + data[i].cnnPredict + "</td>";
-                html += "<td>" + data[i].cnnProbability + "</td>";
+                html += "<td>" + data[i].annPredict + "</td>";
+                html += "<td>" + data[i].annProbability + "</td>";
                 html += "</tr>";
 
             }
