@@ -6,11 +6,15 @@ import org.springframework.stereotype.Service;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +25,7 @@ public class MainService {
 
     void streamFile(HttpServletResponse response)
             throws IOException, URISyntaxException {
-        var data = Files.readAllBytes(Path.of(getClass().getClassLoader().getResource("Praca licencjacka.pdf").toURI()));
+        byte[] data = Files.readAllBytes(Paths.get(getClass().getClassLoader().getResource("bachelor-thesis.pdf").toURI()));
         response.setContentType("application/pdf");
         response.setHeader("Content-disposition", "attachment; filename=" + "praca_licencjacka.pdf");
         response.setContentLength(data.length);
@@ -30,8 +34,8 @@ public class MainService {
     }
 
     List predict(String imageUrl) throws URISyntaxException, IOException {
-        var newPredict = new PredictData();
-        var decodedUrl = new URI(imageUrl).getPath();
+        PredictData newPredict = new PredictData();
+        String decodedUrl = new URI(imageUrl).getPath();
         newPredict.setDecodedUrl(decodedUrl);
         newPredict.setImage(base64ToByteArray(newPredict.getDecodedUrl()));
         predictInModels(newPredict);

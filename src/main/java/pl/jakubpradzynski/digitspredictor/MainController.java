@@ -1,7 +1,6 @@
 package pl.jakubpradzynski.digitspredictor;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -23,14 +21,13 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String start(Model model) {
-        model.addAttribute("title", "Tytuł");
+    public String start() {
         return "index.html";
     }
 
     @RequestMapping("/info")
     public String info() {
-        return "info.html";
+        return "redirect:https://github.com/jakubpradzynski/digits-predictor/blob/master/README.md";
     }
 
     @RequestMapping("/app")
