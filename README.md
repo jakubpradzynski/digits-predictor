@@ -27,7 +27,7 @@ pip3 install tensorflow keras matplotlib scikit-learn pillow
 ### Training models
 Before you run web app, you need to train ML models:
 1. ANN ```python3 ann-train.py```
-2. SVN ```python3 svn-train.py```
+2. SVM```python3 svm-train.py```
 
 ### Web app
 For run web app just apply command:

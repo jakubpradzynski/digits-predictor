@@ -86,8 +86,8 @@ $(document).ready(function () {
             html += "<thead>\n" +
                 "<tr>\n" +
                 "<th class=\"text-left\">Photo</th>\n" +
-                "<th class=\"text-left\">SVN predict</th>\n" +
-                "<th class=\"text-left\">SVN probability</th>\n" +
+                "<th class=\"text-left\">SVM predict</th>\n" +
+                "<th class=\"text-left\">SVM probability</th>\n" +
                 "<th class=\"text-left\">ANN predict</th>\n" +
                 "<th class=\"text-left\">ANN probability</th>\n" +
                 "</tr>\n" +
