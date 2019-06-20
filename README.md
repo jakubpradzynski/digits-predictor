@@ -1,6 +1,16 @@
 # digits-predictor
 App for bachelor thesis
 
+### About project
+The project was created as part of a BA thesis in Computer Science at the University of Nicolaus Copernicus in Toruń.
+
+Author: Jakub Prądzyński.
+
+The project is to present the operation of machine learning models distinguishing hand-written numbers. 
+It is based on the open MNIST database. 
+Contains scripts teaching models of Support Vector Machine and Artificial Neural Network. 
+Access a simple GUI through the browser to be able to draw any digit yourself and check how well-trained models will manage.
+
 ### Requirements
 For the proper functioning of the application, you need: 
 1. Java > 8
@@ -24,3 +34,7 @@ For run web app just apply command:
 ```bash
 mvn spring-boot:run
 ```
+
+### Using
+App run on port 8080.
+Available on http://locaclhost:8080
